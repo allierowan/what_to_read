@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+allie:
+  nick_name: Allie
+  email: allie@gmail.com
+  password_hash: <%= BCrypt::Password.create("password") %>
+
+kvothe:
+  nick_name: Kvothe
+  email: kvothe@gmail.com
+  password_hash: <%= BCrypt::Password.create("password") %>

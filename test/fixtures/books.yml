@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+lolita:
+  title: Lolita
+  author: nabokov
+  genre: Fiction
+  isbn: 12345
+
+dune:
+  title: Dune
+  author: herbert
+  genre: Science Fiction
+  isbn: 93041

@@ -23,24 +23,37 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <%= link_to "literate", books_path, class: "navbar-brand" %>
         </div>
+        <%= link_to "literate", books_path, class: "navbar-brand" %>
         <header id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li>
               <%= link_to "Books", books_path %>
             </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
             <li>
-
+              <% if current_user %>
+                <%= link_to "Logout", session_path, method: :delete %>
+              <% else %>
+                <%= link_to "Login", new_session_path %>
+              <% end %>
             </li>
             <li>
-
+              <%= link_to "#{current_user.nick_name}", user_path(current_user.id) if current_user %>
+            </li>
+            <li>
+              <%= link_to "Sign up", new_user_path unless current_user %>
             </li>
           </ul>
         </header>
       </div>
     </nav>
+
     <div class="container-fluid">
+      <% if @message %>
+        <div class="alert alert-danger"><%= @message %></div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
